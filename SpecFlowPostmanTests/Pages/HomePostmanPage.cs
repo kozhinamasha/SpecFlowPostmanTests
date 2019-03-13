@@ -16,13 +16,6 @@ namespace SpecFlowPostmanTests.Pages
         private By CookieButton => By.CssSelector("div.cc-compliance>a");
         private By SignInButton => By.XPath("//*[@id='siteNav']/nav[2]/a[2]");
 
-        public bool GetPage(string page)
-        {
-            _driver.Navigate().GoToUrl(page);
-            bool logo = _driver.FindElement(Logo).Displayed;
-            return logo;
-        }
-
         public void ConfirmCookie()
         {
             _driver.FindElement(CookieButton).Click();
@@ -32,6 +25,11 @@ namespace SpecFlowPostmanTests.Pages
         {
             _driver.FindElement(SignInButton).Click();
             return new SignInPage(_driver);
+        }
+
+        public void Visit(string url)
+        {
+            _driver.Navigate().GoToUrl(url);
         }
     }
 }

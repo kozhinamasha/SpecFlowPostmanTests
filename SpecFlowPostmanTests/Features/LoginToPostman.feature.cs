@@ -72,7 +72,7 @@ namespace SpecFlowPostmanTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login at the Postman page")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("https://www.getpostman.com/", "kozhinamasha@gmail.com", "Kykolka1987", null)]
+        [NUnit.Framework.TestCaseAttribute("https://www.getpostman.com/", "globallogic", "globallogic", null)]
         public virtual void LoginAtThePostmanPage(string page, string login, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -86,13 +86,53 @@ namespace SpecFlowPostmanTests.Features
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
- testRunner.Given(string.Format("I have opened page {0}", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I visit the page {0}", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
  testRunner.And("I confirmed Cookies policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
  testRunner.When(string.Format("Enter Login {0} and Password {1}", login, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
  testRunner.Then("The login is successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create new workplace")]
+        [NUnit.Framework.TestCaseAttribute("TestWorkSpace", "https://web.postman.co/workspaces", null)]
+        public virtual void CreateNewWorkplace(string name, string page, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new workplace", null, exampleTags);
+#line 14
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 15
+ testRunner.Given("I am logged in user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+ testRunner.When(string.Format("I create new workspace {0}", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.And(string.Format("I visit the page {0}", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.Then(string.Format("I see new workspace {0} at the Dashboard", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Remove new workplace")]
+        [NUnit.Framework.TestCaseAttribute("TestWorkSpace", "https://web.postman.co/workspaces", null)]
+        public virtual void RemoveNewWorkplace(string name, string page, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove new workplace", null, exampleTags);
+#line 24
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 25
+ testRunner.Given("I am logged in user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+ testRunner.When(string.Format("I remove workspace {0}", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+ testRunner.Then("The workspace has been removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
