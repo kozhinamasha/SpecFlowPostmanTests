@@ -1,7 +1,5 @@
-﻿using System.Threading;
-using FluentAssertions;
-using OpenQA.Selenium;
-using SpecFlowPostmanTests.Pages;
+﻿using SpecFlowPostmanTests.Pages;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowPostmanTests.StepDefinitions
@@ -29,7 +27,7 @@ namespace SpecFlowPostmanTests.StepDefinitions
         public void GivenIAmLoggedInUser()
         {
             _homePage.Visit("https://identity.getpostman.com/login");
-            _signInPage.EnterCredentials("globallogic","globallogic");
+            _signInPage.EnterCredentials("globallogic", "globallogic");
             _signInPage.SubmitForm();
             Thread.Sleep(9000);
         }

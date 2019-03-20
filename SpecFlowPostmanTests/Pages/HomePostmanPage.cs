@@ -4,7 +4,6 @@ namespace SpecFlowPostmanTests.Pages
 {
     public class HomePostmanPage
     {
-
         private IWebDriver _driver;
 
         public HomePostmanPage(IWebDriver driver)

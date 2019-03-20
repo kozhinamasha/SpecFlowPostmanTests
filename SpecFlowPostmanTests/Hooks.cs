@@ -1,13 +1,11 @@
-﻿using System;
-
-using System.Configuration;
-using BoDi;
+﻿using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Configuration;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowPostmanTests
@@ -16,7 +14,7 @@ namespace SpecFlowPostmanTests
     public sealed class Hooks
     {
         private IWebDriver _driver;
-        private IObjectContainer _objectContainer;
+        private readonly IObjectContainer _objectContainer;
 
         public Hooks(IObjectContainer objectContainer)
         {
@@ -31,7 +29,7 @@ namespace SpecFlowPostmanTests
 
             if (localExecution == "true")
             {
-                //Local machine
+                // Local machine
                 string browser = ConfigurationManager.AppSettings["browser"];
                 switch (browser)
                 {
@@ -58,7 +56,7 @@ namespace SpecFlowPostmanTests
             }
             else
             {
-                //Selenium Grid
+                // Selenium Grid
                 ChromeOptions options = new ChromeOptions();
                 _driver = new RemoteWebDriver(new Uri("http://localhost:4447/wd/hub"), options);
                 _objectContainer.RegisterInstanceAs(_driver);
@@ -70,5 +68,5 @@ namespace SpecFlowPostmanTests
         {
             _driver.Quit();
         }
-        }
+    }
 }

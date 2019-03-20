@@ -1,5 +1,4 @@
-﻿using System.Drawing.Text;
-using FluentAssertions;
+﻿using FluentAssertions;
 using SpecFlowPostmanTests.Pages;
 using TechTalk.SpecFlow;
 
@@ -23,7 +22,7 @@ namespace SpecFlowPostmanTests.StepDefinitions
         }
 
         [Then("I see new workspace (.*) at the Dashboard")]
-        public void ThenISeeNewWorkspaceAtTheDashboard (string name)
+        public void ThenISeeNewWorkspaceAtTheDashboard(string name)
         {
             _dashboardPage.CountWorkSpaces().Should().Be(TestContext.WorkspaceNumber + 1);
         }
@@ -38,10 +37,9 @@ namespace SpecFlowPostmanTests.StepDefinitions
         [Then("The workspace has been removed")]
         public void ThenTheWorkSpaceHasBeenRemoved()
         {
-            //_dashboardPage.CountWorkSpaces().Should().Be(TestContext.WorkspaceNumber - 1);
-            //_dashboardPage.WorkSpaceDisplayed().Should().Be(name);
+            // _dashboardPage.CountWorkSpaces().Should().Be(TestContext.WorkspaceNumber - 1);
+            // _dashboardPage.WorkSpaceDisplayed().Should().Be(name);
             TestContext.WorkspaceNumber = _dashboardPage.CountWorkSpaces();
         }
     }
-    
 }

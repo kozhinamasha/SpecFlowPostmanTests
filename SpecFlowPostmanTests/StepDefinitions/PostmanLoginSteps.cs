@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using OpenQA.Selenium;
 using SpecFlowPostmanTests.Pages;
 using TechTalk.SpecFlow;
 
