@@ -75,10 +75,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\CreateWorkspace.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateWorkspace.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\LoginToPostman.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginToPostman.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\RemoveWorkspace.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemoveWorkspace.feature</DependentUpon>
     </Compile>
     <Compile Include="Hooks.cs" />
     <Compile Include="Pages\DashboardPage.cs" />
@@ -92,9 +102,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\CreateWorkspace.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateWorkspace.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\LoginToPostman.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LoginToPostman.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\RemoveWorkspace.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RemoveWorkspace.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

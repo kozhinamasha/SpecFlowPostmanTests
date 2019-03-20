@@ -1,6 +1,8 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 [assembly: AssemblyTitle("SpecFlowPostmanTests")]
 [assembly: AssemblyDescription("")]
@@ -10,6 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+[assembly: Parallelizable(ParallelScope.Fixtures)]
 
 [assembly: ComVisible(false)]
 
